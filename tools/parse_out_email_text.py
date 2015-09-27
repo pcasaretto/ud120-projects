@@ -2,18 +2,19 @@
 
 from nltk.stem.snowball import SnowballStemmer
 import string
+import re
 
 def parseOutText(f):
     """ given an opened email file f, parse out all text below the
         metadata block at the top
         (in Part 2, you will also add stemming capabilities)
         and return a string that contains all the words
-        in the email (space-separated) 
-        
+        in the email (space-separated)
+
         example use case:
         f = open("email_file_name.txt", "r")
         text = parseOutText(f)
-        
+
         """
 
 
@@ -33,14 +34,18 @@ def parseOutText(f):
         ### split the text string into individual words, stem each word,
         ### and append the stemmed word to words (make sure there's a single
         ### space between each stemmed word)
-        
+        words = []
+        for word in text_string.split():
+            stemmer = SnowballStemmer("english")
+            stemWord = stemmer.stem(word)
+            words.append(stemWord)
+        # stemmer = SnowballStemmer("english")
+        # ar_words = map(lambda x: stemmer.stem(x.strip()), text_string.split(' '))
+        # ar_words = filter(lambda x: x != '', ar_words)
+        # words = " ".join(ar_words)
+        # words = re.sub(r'\s+', ' ', words)
+    return string.join(words)
 
-
-
-
-    return words
-
-    
 
 def main():
     ff = open("../text_learning/test_email.txt", "r")
@@ -51,4 +56,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
