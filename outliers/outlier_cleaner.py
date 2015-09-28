@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import numpy
 
 def outlierCleaner(predictions, ages, net_worths):
     """
@@ -10,11 +11,11 @@ def outlierCleaner(predictions, ages, net_worths):
         return a list of tuples named cleaned_data where 
         each tuple is of the form (age, net_worth, error)
     """
-    
-    cleaned_data = []
 
-    ### your code goes here
+    error = numpy.subtract(predictions, net_worths)
+    max_value = numpy.percentile(error, 90)
 
-    
-    return cleaned_data
+    tuples = zip(ages, net_worths, error)
+    print(tuples)
 
+    return filter(lambda (a, n, error): error < max_value, tuples)
