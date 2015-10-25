@@ -1,0 +1,17 @@
+Probably the entire SKLearn site
+* http://scikit-learn.org
+e.g.
+* http://scikit-learn.org/stable/auto_examples/plot_digits_pipe.html#example-plot-digits-pipe-py
+* http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
+* http://scikit-learn.org/stable/modules/generated/sklearn.grid_search.GridSearchCV.html
+
+Wikipedia
+* https://en.wikipedia.org/wiki/Logistic_regression
+
+Pandas documentation (used in notebook exploration)
+* http://pandas.pydata.org/pandas-docs/stable/indexing.html
+
+
+I hereby confirm that this submission is my work. I have cited above the origins of any parts of the submission that were taken from Websites, books, forums, blog posts, github repositories, etc
+
+Paulo Casaretto
